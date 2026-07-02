@@ -38,7 +38,7 @@ export async function googleOAuth(){
     const {data, error} = await supabaseClient.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            //redirectTo: Can be changed. It is handled by google auth.
+            redirectTo: window.location.origin,
             queryParams:{
                 access_type:'offline',
                 prompt:'consent'

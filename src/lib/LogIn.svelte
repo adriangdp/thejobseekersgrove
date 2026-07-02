@@ -1,6 +1,8 @@
 <script lang="ts">
-    import Header from "@lib/common/Header.svelte";
-    import { googleOAuth } from "../service/auth.svelte";
+    import { session } from "@store/session-store.svelte";
+  import LogInButton from "@lib/common/LogInButton.svelte";
+
+    const isLogged = $state(session.user);
 
 </script>
 
@@ -9,10 +11,7 @@
             <h1 class="text-2xl font-semibold text-header text-text-darker">The Jobseeker's Grove</h1>
             <p class="text-4xl font-light">Welcome!</p>
             <p class="text-lg">Log in with Google to continue.</p>            
-            <button onclick={()=>googleOAuth()} class="w-full flex items-center button-outlined bg-accent-outer">
-                <img  src="/img/icon-google.png" alt="Log in with google" class="opacity-60 h-8 w-8 grow-0"/>
-                <span class="grow">Log In with Google</span>
-            </button>
+            <LogInButton></LogInButton>
         </div>     
 </div>
 
