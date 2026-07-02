@@ -27,7 +27,8 @@
 <button onclick={()=>showDetail = true}
         class={`relative w-full aspect-1/1.5 md:aspect-1/2 px-5 py-4 lg:py-12 lg:px-8 overflow-hidden ${jobStyle.styles.background}`} >        
         <div class="relative w-full lg:mb-10 mx-auto h-1/3 md:h-1/3 flex flex-col md:justify-center">
-            <img src={jobStyle.icon} alt={`${status} icon status`} class="mx-auto w-24 md:w-26 lg:w-32 brightness-80"/>
+            <img src={jobStyle.icon} alt="" aria-hidden="true"
+              class="mx-auto w-24 md:w-26 lg:w-32 brightness-80"/>
             <div class="mt-2">
                 <strong class="text-base md:text-xl text-center inline"> {JobStyling[status].figureName}</strong>
             </div>            
@@ -39,11 +40,11 @@
             </div>
             <div class="w-full flex flex-col items-start mt-5 md:mt-8 lg:mt-5 gap-1 md:gap-4 lg:gap-3">
                 <div>
-                    <img src="/img/icon-mode.png" alt="work mode icon"  class="w-6 md:w-9 inline" />
+                    <img src="/img/icon-mode.png" alt="" aria-hidden="true" class="w-6 md:w-9 inline" />
                     <span class="ml-2 md:ml-3 text-xs md:text-base">{mode}</span>
                 </div>
                 <div>
-                    <img src="/img/icon-salary.png" alt="salary icon"  class="w-6 md:w-9 inline" />
+                    <img src="/img/icon-salary.png" alt="" aria-hidden="true"  class="w-6 md:w-9 inline" />
                     <span class="ml-2 md:ml-3 text-xs md:text-base">
                         { 
                             salary ? Number(salary).toLocaleString('es-ES')+" €" : "unknown"
@@ -51,7 +52,7 @@
                     </span>
                 </div>
                 <div>
-                    <img src="/img/icon-date.png" alt="added date icon"  class="w-5 md:w-9 inline" />
+                    <img src="/img/icon-date.png" alt="" aria-hidden="true"  class="w-5 md:w-9 inline" />
                     <span class="ml-2 md:ml-3 text-xs md:text-base">
                         {
                             applied_date ?
