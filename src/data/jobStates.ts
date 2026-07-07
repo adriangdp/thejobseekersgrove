@@ -4,7 +4,7 @@ import { enumJobStatus } from "@data/enum";
 export const JobStyling:JobStylingDictionary = {
     offer:{
         state: enumJobStatus.offer,
-        figureName:"The Oportunity",
+        figureName:"Eye",
         icon: "/img/icon-no-art-yet.webp",
         styles:{
             color:"color-card-offer",
@@ -22,7 +22,7 @@ export const JobStyling:JobStylingDictionary = {
 
     applied:{
         state: enumJobStatus.applied,
-        figureName:"The Wait",
+        figureName:"Water",
         icon: "/img/icon-applied.webp",
         styles:{
             color:"color-card-applied",
@@ -39,7 +39,7 @@ export const JobStyling:JobStylingDictionary = {
     },
     rejected:{
         state: enumJobStatus.rejected,
-        figureName:"The Red Mushroom",
+        figureName:"Broken Pot",
         icon: "/img/icon-no-art-yet.webp",
         styles:{
             color:"color-card-rejected",
@@ -56,7 +56,7 @@ export const JobStyling:JobStylingDictionary = {
     },
     interview:{
         state: enumJobStatus.interview,
-        figureName:"The Chatter",
+        figureName:"The Fruit",
         icon: "/img/icon-no-art-yet.webp",
         styles:{
             color:"color-card-interview",
