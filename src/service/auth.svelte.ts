@@ -1,5 +1,5 @@
 import { supabaseClient } from "./supabase-client.svelte";
-import { session } from '../store/session-store.svelte';
+import { session } from "../store/session-store.svelte";
 
 /**
  * Sets the user session as a global state
@@ -7,18 +7,18 @@ import { session } from '../store/session-store.svelte';
 supabaseClient.auth.onAuthStateChange(async(authEvent, currentSession)=>{
     session.loading = true;
 
-     if (authEvent === 'INITIAL_SESSION') {
+     if (authEvent === "INITIAL_SESSION") {
         session.loading = false;
         return;
-    } else if (authEvent === 'SIGNED_IN' && currentSession) {
+    } else if (authEvent === "SIGNED_IN" && currentSession) {
         session.user = currentSession.user;
         session.loading = false;
         return;
-    } else if (authEvent === 'SIGNED_OUT') {
+    } else if (authEvent === "SIGNED_OUT") {
         session.user = null;
         session.loading = false;
         return;
-    } else if (authEvent === 'TOKEN_REFRESHED' && currentSession) {
+    } else if (authEvent === "TOKEN_REFRESHED" && currentSession) {
         session.user = currentSession.user;
         session.loading = false;
         return;
@@ -36,12 +36,12 @@ supabaseClient.auth.onAuthStateChange(async(authEvent, currentSession)=>{
  */
 export async function googleOAuth(){
     const {data, error} = await supabaseClient.auth.signInWithOAuth({
-        provider: 'google',
+        provider: "google",
         options: {
-            redirectTo: window.location.origin,
+            redirectTo: `${window.location.origin}`,
             queryParams:{
-                access_type:'offline',
-                prompt:'consent'
+                access_type:"offline",
+                prompt:"consent"
             }
         }   
     })
