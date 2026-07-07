@@ -4,7 +4,7 @@
 
     let {isOpen = $bindable(), backgroundColor, children} : {isOpen:boolean, backgroundColor?:string, children:Snippet}= $props()
     let isClosing : boolean = $state(false);
-    let backgroundAlpha = $derived(backgroundColor ? backgroundColor:"bg-accent-outer/90")
+    let backgroundAlpha = $derived(backgroundColor ? backgroundColor:"bg-accent-outer")
 
     const handleClose = () =>{
         isClosing = true;

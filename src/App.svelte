@@ -25,11 +25,14 @@
 {#if session.user == null}
   <LogIn />
 {:else}
-    <main class="w-11/12 mx-auto">
-      <Header />
-      <LogInButton />
-      <Board />
-    </main>
+  <div class="fixed top-0 left-0 w-screen h-screen opacity-30 -z-15 mix-blend-screen bg-position-[50%_10%] bg-[url(/img/bg-login.webp)] bg-cover"></div>
+  <main class="w-11/12 mx-auto">
+    <Header />
+    <LogInButton />
+    <Board />
+  </main>
+  
+    
 {/if}
   
 

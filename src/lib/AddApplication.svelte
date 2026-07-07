@@ -153,7 +153,8 @@
                     />
                 </div>
             </div> 
-            <button type="submit" class="w-full h-full"> Apply here</button>
+            <button type="submit" class="w-full h-full button-outlined bg-accent-inner">Apply here</button>
+            <div class={`overlay-noise opacity-20 pointer-events-none`}></div>
         </form>
 
 <style>

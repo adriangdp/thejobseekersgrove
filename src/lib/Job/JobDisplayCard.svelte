@@ -21,14 +21,15 @@
         salary, 
         link
     } = $derived(application);
-
 </script>    
 
 <button onclick={()=>showDetail = true}
-        class={`relative w-full aspect-1/1.5 md:aspect-1/2 px-5 py-4 lg:py-12 lg:px-8 overflow-hidden ${jobStyle.styles.background}`} >        
+    class={`relative w-full aspect-1/1.5 md:aspect-1/2 overflow-hidden ${jobStyle.styles.background} rounded-md`}
+    >
+    <div class={`w-full h-full px-5 py-4 lg:py-12 lg:px-6 rounded-xs border-3 ${jobStyle.styles.badge.border}`}>
         <div class="relative w-full lg:mb-10 mx-auto h-1/3 md:h-1/3 flex flex-col md:justify-center">
             <img src={jobStyle.icon} alt="" aria-hidden="true"
-              class="mx-auto w-24 md:w-26 lg:w-32 brightness-80"/>
+                class="mx-auto w-24 md:w-26 lg:w-32 brightness-80"/>
             <div class="mt-2">
                 <strong class="text-base md:text-xl text-center inline"> {JobStyling[status].figureName}</strong>
             </div>            
@@ -63,12 +64,13 @@
                     </span>
                 </div>                
             </div>
-    
         </div>
-        <!--
-        <div class={`w-full h-full absolute top-0 left-0 ${jobStyle.styles.bgGradient} mix-blend-overlay`}>
-        </div>
-        -->
-            
-   
+    </div>
+    <div class={`overlay-noise opacity-35 pointer-events-none`}></div>
+
+    <!--
+    <div class={`w-full h-full absolute top-0 left-0 ${jobStyle.styles.bgGradient} mix-blend-overlay`}>
+    </div>
+    -->
+
     </button>

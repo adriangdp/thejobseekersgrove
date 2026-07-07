@@ -13,25 +13,25 @@
   --color-card-offer-lighter: oklch(0.8256 0.0288 84.56);
   --color-card-offer-darker: oklch(0.4356 0.0288 84.56);
   
-  --color-card-applied: oklch(0.36 0.0258 10.97);
-  --color-card-applied-lighter: oklch(0.76 0.0258 10.97);
-  --color-card-applied-darker: oklch(0.26 0.0258 10.97);
+  --color-card-applied: oklch(0.42 0.0258 10.97);
+  --color-card-applied-lighter: oklch(0.72 0.0258 10.97);
+  --color-card-applied-darker: oklch(0.27 0.0258 10.97);
 
-  --color-card-interview: oklch(0.3507 0.0702 274.69);
-  --color-card-interview-lighter: oklch(0.7507 0.0702 274.69);
-  --color-card-interview-darker: oklch(0.2207 0.0702 274.69);
+  --color-card-interview: oklch(0.47 0.0221 276.56);
+  --color-card-interview-lighter: oklch(0.7245 0.0221 276.56);
+  --color-card-interview-darker: oklch(0.2807 0.0221 276.56);
 
-  --color-card-rejected: oklch(0.4574 0.14 12.54);
-  --color-card-rejected-lighter: oklch(0.8574 0.14 12.54);
-  --color-card-rejected-darker: oklch(0.3274 0.14 12.54);
+  --color-card-rejected: oklch(0.4519 0.0778 13.35);
+  --color-card-rejected-lighter: oklch(0.8276 0.0778 13.35);
+  --color-card-rejected-darker: oklch(0.3874 0.0778 13.35);
 
-  --color-card-ghosted: oklch(0.40 0.0124 229.19);
-  --color-card-ghosted-lighter: oklch(0.85 0.0124 229.19);
-  --color-card-ghosted-darker: oklch(0.3 0.0124 229.19);
+  --color-card-ghosted: oklch(0.5562 0.0213 152.14);
+  --color-card-ghosted-lighter: oklch(0.8 0.0213 152.14);
+  --color-card-ghosted-darker: oklch(0.3 0.0213 152.14);
   
-  --color-card-accepted: oklch(0.5108 0.0807 131.85);
-  --color-card-accepted-lighter: oklch(0.8408 0.0807 131.85);
-  --color-card-accepted-darker: oklch(0.4 0.0807 131.85);
+  --color-card-accepted: oklch(0.5342 0.0371 137.69);
+  --color-card-accepted-lighter: oklch(0.7408 0.0371 131.85);
+  --color-card-accepted-darker: oklch(0.35 0.0371 131.85);
 
   --font-header: "Caudex", Georgia, "Times New Roman", Times, serif;
   --font-body-text: "Work Sans", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
@@ -147,4 +147,10 @@
     @apply bg-transparent ring-1 ring-text-body transition-transform duration-70 hover:ring-2 hover:ring-text-darker hover:-translate-y-0.5 focus:ring-2
   }
 }
+
+@utility overlay-noise {
+  @apply absolute top-0 left-0 w-full h-full bg-[url(/img/noise.webp)] bg-no-repeat mix-blend-overlay;
+  opacity: --value(percentage);
+}
+
 

@@ -197,7 +197,7 @@
             {/if}
             <DeleteJobApplication id={id} handleDelete={handleDelete}/>           
         </div>
-
+       <div class={`overlay-noise opacity-25 pointer-events-none`}></div>
     </div>
 </Modal>
 
