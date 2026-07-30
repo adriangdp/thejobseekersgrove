@@ -1,8 +1,8 @@
 # The Jobseeker's Grove
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8b9d2488-44c5-4f73-98b8-b9114afa4776/deploy-status)](https://app.netlify.com/projects/thejobseekersgrove/deploys) 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8b9d2488-44c5-4f73-98b8-b9114afa4776/deploy-status)](https://app.netlify.com/projects/thejobseekersgrove/deploys)
 
-[Live Demo](https://thejobseekersfate.netlify.app/)
+[Live Demo](https://thejobseekersgrove.netlify.app)
 
 *A whimsical walk through the jobposting grove. In the grove of job postings, there might be great opportunities or, at least, funny little critters.*
 
