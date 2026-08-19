@@ -38,7 +38,6 @@ export const applyFiltersAndSort = (dataJobs:JobEntry[]):JobEntry[] =>{
 
 export const filterByQueryText = (query:string, jobs:JobEntry[]):JobEntry[] =>{
     const cleanString = query.toLowerCase().replace(/[\W_]/g," ").replace(/\s+/g, " ").trim();
-    console.log("Clean string: " + cleanString)
     const words = cleanString.split(" ");
 
     return jobs.filter((job) =>{
@@ -51,7 +50,6 @@ export const containsQueryText = (query:string[], job:JobEntry):boolean =>{
     .filter(val => typeof val === "string");
     return jobStringProperties.some(job =>{
         return query.some((q) =>{
-            console.log(`Matching: "${job}" property against "${q}"`)
             return job.toLowerCase().includes(q)
         })
     });

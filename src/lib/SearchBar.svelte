@@ -2,7 +2,6 @@
 
 import { filterStates } from "@store/filter-store.svelte";
 let inputQuery = $state(undefined);
-$inspect(inputQuery, `The query right now is ${inputQuery} while the store is ${filterStates.textQuery}`);
 const handleChangeQuery = () =>{
     filterStates.textQuery = inputQuery
 }
