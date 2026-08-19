@@ -21,18 +21,19 @@
         salary, 
         link
     } = $derived(application);
+    let rowStyleString = `border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40 ${jobStyle.styles.badge.background}`
 </script>
 
 <tr onclick={()=>showDetail = true} class="cursor-pointer">
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40">
-            <BadgeStatus status={status} />
+        <td class={rowStyleString + ' capitalize'}>
+            {jobStyle.state}
         </td>
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40">{position}</td>
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40">{company}</td>
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40">{mode}</td>
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40">{salary}</td>
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40"><a href={link}> Offer site </a></td>
-        <td class="border py-3 px-5 border-accent-outer text-sm md:text-base text-center min-w-40">
+        <td class={rowStyleString}>{position}</td>
+        <td class={rowStyleString}>{company}</td>
+        <td class={rowStyleString}>{mode}</td>
+        <td class={rowStyleString}>{salary}</td>
+        <td class={rowStyleString}><a href={link}> Offer site </a></td>
+        <td class={rowStyleString}>
             {
                 applied_date ?
                     `${applied_date.getDate().toString().padStart(2,"0")}/${(applied_date.getMonth() + 1).toString().padStart(2,"0")}/${applied_date.getFullYear()}`
