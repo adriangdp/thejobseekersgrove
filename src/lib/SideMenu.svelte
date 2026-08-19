@@ -28,7 +28,7 @@
                 <LogInButton />
             </div>
             
-            <div class="mt-8">
+            <div class="mt-5">
                 <AddApplicationButton bind:showAddApplicationModal />
                 <div class="mt-8">
                     <SwitchView bind:isCardDisplay />            

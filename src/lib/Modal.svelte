@@ -16,7 +16,7 @@
 </script>
 
 <dialog class="z-30 flex items-center justify-center fixed top-0 left-0 h-dvh w-dvw xl:p-10 bg-accent-outer/60 backdrop-blur-xs">
-    <div class={`relative flex flex-col justify-center items-center ${backgroundAlpha} h-full w-full md:w-fit md:h-fit max-w-full max-h-full px-8 md:p-5 py-8 xl:p-10 overflow-x-hidden overflow-y-scroll lg:overflow-y-visible ${isClosing ? 'animate-falldown-reverse':'animate-falldown'} rounded-md`}>
+    <div class={`relative flex flex-col justify-center items-center ${backgroundAlpha} h-full w-full md:max-w-8/10 lg:w-fit md:h-fit max-w-full max-h-full p-8 md:px-14 xl:p-10 overflow-x-hidden overflow-y-scroll lg:overflow-y-visible ${isClosing ? 'animate-falldown-reverse':'animate-falldown'} rounded-md`}>
             {@render children()}  
         <CloseButton handler={handleClose} positioning=""/>         
     </div>            
