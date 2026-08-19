@@ -84,19 +84,19 @@
 </script>
 
 <Modal bind:isOpen = {showDetail} backgroundColor={jobStyle.styles.background}>
-    <div class="flex flex-col items-center justify-center mx-auto aspect-[1/1.5] w-[260px] md:w-[300px] lg:w-[450px] max-w-full">
+    <div class="flex flex-col items-center justify-center mx-auto aspect-[1/1.5] w-full md:w-[450px] xl:w-[500px] max-w-full max-h-full">
         <div class="flex flex-col justify-center items-center md:gap-6 w-full">
             <img src={jobStyle.icon} alt={`${status} icon status`} class="brightness-80 w-24 md:w-26 lg:w-32"/>
             <div class="w-full max-w-full flex flex-col items-center justify-center">
                 {#if !editDataMode}
                 <span class="block font-rosarivo text-center text-wrap text-lg md:text-2xl lg:text-xl text-text-darker">{company}</span>              
                 {:else}
-                <input class="block font-rosarivo text-center text-wrap text-lg md:text-2xl lg:text-xl text-text-darker" bind:value={company}/>               
+                <input class="block w-full font-rosarivo text-center text-wrap text-lg md:text-2xl lg:text-xl text-text-darker" bind:value={company}/>               
                 {/if}
                 <p class="min-w-10 max-w-full font-rosarivo text-center text-wrap wrap-break-word text-lg md:text-2xl lg:text-xl">{jobStyle.figureName}</p>
             </div>
         </div>
-        <div class="absolute top-4 left-4">
+        <div class="absolute top-4 left-4 w-full">
             <button class="button-invisible p-0 relative min-h-fit" onclick={()=>{editStatusFlag = !editStatusFlag}}>
                 <BadgeStatus status={status as enumJobStatus} />   
                 {#if editStatusFlag}
@@ -104,14 +104,14 @@
                 {/if}
             </button>
         </div>  
-        <div class="mt-8 xl:mt-3 flex flex-col gap-5 md:gap-6 xl:gap-2">              
-                <div>                    
+        <div class="mt-8 xl:mt-3 flex flex-col gap-5 md:gap-6 xl:gap-2 w-full">              
+                <div class="flex justify-center">                    
                     {#if !editDataMode && position}
-                    <span class="ml-2 md:ml-3 md:text-lg text-text-darker">{position}</span>
+                    <span class="w-full md:text-lg text-text-darker text-center">{position}</span>
                     {:else if !editDataMode}
-                    <span class="ml-2 md:ml-3 md:text-lg lg:text-base text-text-darker">unknown</span>
+                    <span class="w-full ml-2 md:ml-3 md:text-lg lg:text-base text-text-darker text-center">unknown</span>
                     {:else}
-                    <input class="ml-2 md:ml-3 md:text-lg lg:text-base text-text-darker" bind:value={position} />
+                    <input class="w-full md:text-lg lg:text-base text-text-darker text-center" bind:value={position} />
                     {/if}
                 </div>
                 <div>
@@ -167,7 +167,7 @@
                     {/if}
                 </div>     
         </div>
-        <div class="mt-12 w-full flex gap-3">
+        <div class="mt-12 flex gap-3 w-full">
             {#if editDataMode == false}
             <button 
                 class={`grow flex items-center justify-center gap-1 w-1/2 button-outlined ${jobStyle.styles.background}`}

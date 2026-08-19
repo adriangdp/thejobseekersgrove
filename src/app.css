@@ -133,12 +133,12 @@
     @apply bg-accent-inner p-2 cursor-pointer
   }
 
-  button, input, select{
+  button, select{
     @apply rounded-md min-h-12 md:min-h-16 xl:min-h-10
   }
 
   input{
-    @apply ring px-2 bg-black/30
+    @apply ring px-2 bg-black/30 rounded-md p-2
   }
 
   a{
