@@ -168,7 +168,6 @@ describe("Filter functions", ()=>{
         filterStates.textQuery = "Oldest !!!! >>> good !!!!!!"
 
         const filtered = applyFiltersAndSort(jobEntries)
-        console.table(filtered)
         
         expect(filtered.length).toBe(2)
         expect(filtered[0].company).toBe("The Oldest Company");
