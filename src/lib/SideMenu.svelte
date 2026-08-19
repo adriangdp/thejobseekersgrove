@@ -23,7 +23,10 @@
     ><span class="block w-10 h-10 mx-auto bg-[url('/img/icon-menu.png')] bg-contain bg-center bg-no-repeat" aria-hidden="true"></span></button>
     {#if isOpen}
         <Modal bind:isOpen>
-            <LogInButton />
+            <div class="self-end">
+                <LogInButton />
+            </div>
+            
             <div class="mt-8">
                 <AddApplicationButton bind:showAddApplicationModal />
                 <div class="mt-8">
@@ -31,7 +34,7 @@
                     <BoardFilter />                
                 </div>
             </div>
-            <div class="mt-5 md:mt-20">
+            <div class="mt-5 md:mt-20 w-full">
                 <ClearDataButton />
             </div> 
 

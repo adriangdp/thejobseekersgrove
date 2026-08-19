@@ -84,7 +84,7 @@
 </script>
 
 <Modal bind:isOpen = {showDetail} backgroundColor={jobStyle.styles.background}>
-    <div class="flex flex-col aspect-[1/1.5] w-[260px] md:w-[300px] lg:w-[450px] max-w-full">
+    <div class="flex flex-col items-center justify-center mx-auto aspect-[1/1.5] w-[260px] md:w-[300px] lg:w-[450px] max-w-full">
         <div class="flex flex-col justify-center items-center md:gap-6 w-full">
             <img src={jobStyle.icon} alt={`${status} icon status`} class="brightness-80 w-24 md:w-26 lg:w-32"/>
             <div class="w-full max-w-full flex flex-col items-center justify-center">
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="absolute top-4 left-4">
-            <button class="button-invisible p-0 relative" onclick={()=>{editStatusFlag = !editStatusFlag}}>
+            <button class="button-invisible p-0 relative min-h-fit" onclick={()=>{editStatusFlag = !editStatusFlag}}>
                 <BadgeStatus status={status as enumJobStatus} />   
                 {#if editStatusFlag}
                     <BadgeStatusChanger state={status} callback={handleBadgeChange} jobStyle={jobStyle}></BadgeStatusChanger>
