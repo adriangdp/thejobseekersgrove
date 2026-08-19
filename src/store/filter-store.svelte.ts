@@ -46,11 +46,18 @@ export const filterByQueryText = (query:string, jobs:JobEntry[]):JobEntry[] =>{
 }
 
 export const containsQueryText = (query:string[], job:JobEntry):boolean =>{
-    const jobStringProperties = Object.values(job)
-    .filter(val => typeof val === "string");
-    return jobStringProperties.some(job =>{
+    const jobStringProperties = [
+        job.company,
+        job.position,
+        job.mode,
+        job.status,
+        job.notes
+    ].filter(val=> val !== undefined && typeof val === "string" );
+
+    return jobStringProperties.some(jobProp =>{
+        if(jobProp === undefined){return false}
         return query.some((q) =>{
-            return job.toLowerCase().includes(q)
+            return jobProp.toLowerCase().includes(q)
         })
     });
 }
