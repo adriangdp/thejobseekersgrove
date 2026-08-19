@@ -24,7 +24,7 @@
 </script>    
 
 <button onclick={()=>showDetail = true}
-    class={`relative w-full aspect-1/1.5 md:aspect-1/2 overflow-hidden ${jobStyle.styles.background} rounded-md`}
+    class={`relative w-full aspect-1/2 overflow-hidden ${jobStyle.styles.background} rounded-md`}
     >
     <div class={`w-full h-full px-5 py-4 lg:py-12 lg:px-6 rounded-xs border-3 ${jobStyle.styles.badge.border}`}>
         <div class="relative w-full lg:mb-10 mx-auto h-1/3 md:h-1/3 flex flex-col md:justify-center">

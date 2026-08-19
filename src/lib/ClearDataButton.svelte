@@ -18,19 +18,20 @@
 
 </script>
 
-<div class="relative w-fit bg-background border border-accent-outer overflow-hidden">
-     <button class={`fold ${isFolded? '':'unfold'} flex items-center justify-center gap-2`} onclick={handleunFold}>
-        <img src="/img/icon-delete.png"
-                alt="Delete database button icon"
-                width="20px" height="20px" 
-        />
+<div class="relative w-full overflow-hidden">
+     <button class={`fold ${isFolded? '':'unfold'} flex items-center justify-center gap-2 group`} onclick={handleunFold}>
+        <span class="w-5 h-5 xl:w-8 xl:h-8 bg-[url('/img/icon-delete.png')] bg-cover group-hover:animate-bounce"></span>
         <span>Clear data</span>
     </button>
-    <div  class="flex p-2 gap-3 w-full h-full bg-card-rejected/10 ">
-            <span>Are you sure?</span>
-            <button onclick={handleClearTable} class="button-invisible p-0 hover:text-card-rejected" disabled={isFolded}>YES</button>
+    <div class="flex items-center p-2 rounded-md gap-2 lg:gap-0 w-full h-full bg-card-rejected">
+            <span class="grow min-w-fit">Are you sure?</span>
+            <button onclick={handleClearTable} disabled={isFolded} aria-hidden={`${isFolded}`}
+                class="button-invisible p-0 transition-all hover:-translate-y-1.5"
+            >YES</button>
             <span>&nbsp;</span>
-            <button onclick={()=>isFolded = true} class="button-invisible p-0 hover:text-card-applied" disabled={isFolded}>NO</button>  
+            <button onclick={()=>isFolded = true} disabled={isFolded} aria-hidden={`${isFolded}`}
+                class="button-invisible p-0 transition-all hover:-translate-y-1.5"
+            >NO</button>  
     </div> 
    
 </div>

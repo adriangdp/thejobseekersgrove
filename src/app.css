@@ -42,6 +42,7 @@
   --animate-falldown-reverse: falldownReverse .30s 0s linear 1 forwards;
   --animate-revealcard: revealCard .30s 0s ease 1 forwards;
   --animate-fadeIn: fadeIn .25s 0s ease-out 1 forwards;
+  --animate-slideRightIn: slideRightIn .45s 0s linear 1 forwards;
 
   @keyframes falldown{
     0%{
@@ -68,6 +69,17 @@
     100%{
       opacity: 0;
       transform:translateY(-30vh)
+    }
+  }
+
+  @keyframes slideRightIn{
+    0%{
+      opacity: 0;
+      transform:translateX(100%);
+    }
+    100%{
+      opacity: 1;
+      transform:translateX(0%)
     }
   }
 
@@ -118,11 +130,11 @@
   }
 
   button, select{
-    @apply bg-accent-inner p-2
+    @apply bg-accent-inner p-2 cursor-pointer
   }
 
   button, input, select{
-    @apply rounded-md
+    @apply rounded-md min-h-12 md:min-h-16 xl:min-h-10
   }
 
   input{
@@ -141,7 +153,7 @@
     @apply font-header tracking-[0.095rem]
   }
   .button-invisible{
-    @apply border-0 bg-transparent p-2 rounded-none cursor-pointer
+    @apply border-0 bg-transparent p-2 rounded-none underline underline-offset-4
   }
   .button-outlined{
     @apply bg-transparent ring-1 ring-text-body transition-transform duration-70 hover:ring-2 hover:ring-text-darker hover:-translate-y-0.5 focus:ring-2

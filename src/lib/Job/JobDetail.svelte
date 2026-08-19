@@ -84,8 +84,8 @@
 </script>
 
 <Modal bind:isOpen = {showDetail} backgroundColor={jobStyle.styles.background}>
-    <div class="flex flex-col aspect-[1/1.5] md:aspect-1/2 max-w-full w-[260px] md:w-[300px] lg:w-[350px]">
-        <div class="flex flex-col md:flex-row justify-center items-center md:gap-6 w-full">
+    <div class="flex flex-col aspect-[1/1.5] w-[260px] md:w-[300px] lg:w-[450px] max-w-full">
+        <div class="flex flex-col justify-center items-center md:gap-6 w-full">
             <img src={jobStyle.icon} alt={`${status} icon status`} class="brightness-80 w-24 md:w-26 lg:w-32"/>
             <div class="w-full max-w-full flex flex-col items-center justify-center">
                 {#if !editDataMode}
@@ -96,15 +96,15 @@
                 <p class="min-w-10 max-w-full font-rosarivo text-center text-wrap wrap-break-word text-lg md:text-2xl lg:text-xl">{jobStyle.figureName}</p>
             </div>
         </div>
-        <div class="mt-8 flex flex-col gap-5 md:gap-6">
-                <div>
-                    <button class="button-invisible p-0 relative" onclick={()=>{editStatusFlag = !editStatusFlag}}>
-                        <BadgeStatus status={status as enumJobStatus} />   
-                        {#if editStatusFlag}
-                            <BadgeStatusChanger state={status} callback={handleBadgeChange} jobStyle={jobStyle}></BadgeStatusChanger>
-                        {/if}
-                    </button>
-                </div>                
+        <div class="absolute top-4 left-4">
+            <button class="button-invisible p-0 relative" onclick={()=>{editStatusFlag = !editStatusFlag}}>
+                <BadgeStatus status={status as enumJobStatus} />   
+                {#if editStatusFlag}
+                    <BadgeStatusChanger state={status} callback={handleBadgeChange} jobStyle={jobStyle}></BadgeStatusChanger>
+                {/if}
+            </button>
+        </div>  
+        <div class="mt-8 xl:mt-3 flex flex-col gap-5 md:gap-6 xl:gap-2">              
                 <div>                    
                     {#if !editDataMode && position}
                     <span class="ml-2 md:ml-3 md:text-lg text-text-darker">{position}</span>
