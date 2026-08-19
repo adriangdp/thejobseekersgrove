@@ -5,6 +5,7 @@
     import LogInButton from "@lib/common/LogInButton.svelte";
     import ClearDataButton from "@lib/ClearDataButton.svelte";
     import Modal from "@lib/Modal.svelte";
+  import SearchBar from "@lib/SearchBar.svelte";
     let { 
         isCardDisplay  = $bindable(),
         showAddApplicationModal = $bindable()
@@ -31,6 +32,7 @@
                 <AddApplicationButton bind:showAddApplicationModal />
                 <div class="mt-8">
                     <SwitchView bind:isCardDisplay />            
+                    <SearchBar /> 
                     <BoardFilter />                
                 </div>
             </div>
@@ -52,7 +54,8 @@
             <AddApplicationButton bind:showAddApplicationModal />
         </span>
         <div class="mt-5 w-full">              
-                <SwitchView bind:isCardDisplay />            
+                <SwitchView bind:isCardDisplay />        
+                <SearchBar /> 
                 <BoardFilter />                
         </div>
         <div class="grow w-full flex flex-col-reverse h-full">

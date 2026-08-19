@@ -9,7 +9,8 @@ export const filterStates = $state({
     showGhosted: true,
     showAccepted: true,
     sortBy:enumSortModes.default,
-    isAscendent: false
+    isAscendent: false,
+    textQuery:undefined as string | undefined
 })
 
 
@@ -26,10 +27,34 @@ export const applyFiltersAndSort = (dataJobs:JobEntry[]):JobEntry[] =>{
     if(dataJobs.length <= 0){
         return [];
     }
-    let jobs = [...dataJobs]
+    let jobs = [...dataJobs];
+    if(filterStates.textQuery != undefined){
+        jobs = filterByQueryText(filterStates.textQuery, jobs);
+    }    
     jobs = filterByStatus(jobs);
     jobs = sortByModes(jobs);
     return jobs;
+}
+
+export const filterByQueryText = (query:string, jobs:JobEntry[]):JobEntry[] =>{
+    const cleanString = query.toLowerCase().replace(/[\W_]/g," ").replace(/\s+/g, " ").trim();
+    console.log("Clean string: " + cleanString)
+    const words = cleanString.split(" ");
+
+    return jobs.filter((job) =>{
+        return containsQueryText(words, job)
+    })
+}
+
+export const containsQueryText = (query:string[], job:JobEntry):boolean =>{
+    const jobStringProperties = Object.values(job)
+    .filter(val => typeof val === "string");
+    return jobStringProperties.some(job =>{
+        return query.some((q) =>{
+            console.log(`Matching: "${job}" property against "${q}"`)
+            return job.toLowerCase().includes(q)
+        })
+    });
 }
 
 const filterByStatus = (jobs:JobEntry[]):JobEntry[] =>{

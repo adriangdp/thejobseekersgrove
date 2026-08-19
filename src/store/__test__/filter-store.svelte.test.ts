@@ -1,7 +1,13 @@
 import {describe, it, expect, beforeAll} from "vitest";
 import type { JobEntry, Job } from "@data/types"
 import { enumJobStatus, enumSortModes } from "@data/enum"
-import { applyFiltersAndSort, filterStates, isAllFiltersOff } from "@store/filter-store.svelte";
+import { 
+    applyFiltersAndSort, 
+    filterStates, 
+    isAllFiltersOff, 
+    filterByQueryText, 
+    containsQueryText 
+} from "@store/filter-store.svelte";
 
 const jobEntries:JobEntry[] = [
     {
@@ -100,6 +106,21 @@ describe("Sort functions", ()=>{
     })
 })
 
+describe("Query JobEntries by text", ()=>{
+    it("Returns true if any string in the array matches any string value in the JobEntry", ()=>{
+        const query = ["oldest","tomato","fruit","momo"];
+        expect(containsQueryText(query, jobEntries[1])).toBe(true)
+    })
+
+    it("Returns a JobEntry[] where any element property matches any word in the given string", ()=>{
+        const query = "Highest potato loWest"
+        const filtered = filterByQueryText(query, jobEntries)
+        expect(filtered.length).equal(2);
+        expect(filtered[0].company).toBe("The Highest paying company");
+        expect(filtered[1].company).toBe("The Lowest paying Company");
+    })
+})
+
 describe("Filter functions", ()=>{
     beforeAll(()=>{
         filterStates.showOffer = false,
@@ -134,4 +155,25 @@ describe("Filter functions", ()=>{
 
         expect(filtered.length).toBe(0)
     })
+
+    it("Returns elements matching text query with all filters on", ()=>{
+        filterStates.showOffer = true,
+        filterStates.showApplied = true,
+        filterStates.showRejected = true,
+        filterStates.showInterview = true,
+        filterStates.showGhosted = true,
+        filterStates.showAccepted = true,
+        filterStates.sortBy = enumSortModes.default,
+        filterStates.isAscendent = true,
+        filterStates.textQuery = "Oldest !!!! >>> good !!!!!!"
+
+        const filtered = applyFiltersAndSort(jobEntries)
+        console.table(filtered)
+        
+        expect(filtered.length).toBe(2)
+        expect(filtered[0].company).toBe("The Oldest Company");
+        expect(filtered[1].company).toBe("The Good Company");
+    })
 })
+
+
