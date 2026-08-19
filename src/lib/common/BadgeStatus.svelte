@@ -10,6 +10,6 @@
 
 </script>
 
-<div class={`inline-flex items-center justify-center w-26 md:w-28 xl:w-30 py-1 xl:py-2 rounded-full border ${borderColor} ${bgColor} ${textStyle}`}>
+<div class={`inline-flex items-center justify-center w-25 py-1 rounded-md border ${borderColor} ${bgColor} ${textStyle}`}>
     <p class={`${textStyle} capitalize`}>{JobStyling[status].state}</p>
 </div>
